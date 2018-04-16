@@ -21,8 +21,10 @@ alias logs="tail -f /var/log/fm/contacts.log"
 alias uwsgi_logs="tail -f /var/log/uwsgi/uwsgi.log"
 alias celery="fan && $HEARSAY_LABS_FANMGMT_PATH/scripts/start_celeryd.sh"
 alias ship="fan && lgtm create"
-alias fix="sudo service uwsgi2 restart && sudo service nginx restart"
+alias fix="sudo service uwsgi2 restart && sudo service uwsgi3 restart && sudo service nginx restart"
 
 
 alias cts="cd $CONTACT_SERVICE_PATH"
 alias ctc="cd $CONTACT_CLIENT_PATH"
+
+export NO_FANMGMT_CLEAN=1
